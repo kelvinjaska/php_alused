@@ -17,9 +17,9 @@
 echo '<h5 style="font-size:50px; color: white;">Ulesanne</h5>';
 $arv = rand(0, 100);
 if($arv % 2 == 0) {
-    echo '<div style="color: red; font-size: 40px">'. $arv .'</div>';
+    echo '<span style="color: red; font-size: 40px">'. $arv .'</span>';
 } else {
-    echo '<div style="color: blue; font-size: 40px">'. $arv . '</div>';
+    echo '<span style="color: blue; font-size: 40px">'. $arv . '</span>';
 }
 /** tingimuslaused
  *  if (tingimus) {
@@ -36,15 +36,15 @@ echo '<h5 style="font-size:50px; color: white;">Ulesanne 2</h5>';
 echo '<body style="background: black">';
 $arv2 = rand(0,100);
 if($arv2 >= 0 and $arv2 < 25) {
-    echo '<div style="color: red; font-size: 40px">' . $arv2 . '</div>';
+    echo '<span style="color: red; font-size: 40px">' . $arv2 . '</span>';
 } else if ($arv2 >= 25 and $arv2 < 50) {
-    echo '<div style="color: green; font-size: 40px">' . $arv2 . '</div>';
+    echo '<span style="color: green; font-size: 40px">' . $arv2 . '</span>';
 } else if ($arv2 >= 50 and $arv2 < 75) {
-    echo '<div style="color: yellow; font-size: 40px">' . $arv2 . '</div>';
+    echo '<span style="color: yellow; font-size: 40px">' . $arv2 . '</span>';
 } else if ($arv2 >= 75 and $arv2 < 100) {
-    echo '<div style="color: orange; font-size: 40px">' . $arv2 . '</div>';
+    echo '<span style="color: orange; font-size: 40px">' . $arv2 . '</span>';
 } else {
-    echo '<div style="color: white; font-size: 40px">' . $arv2 . '</div>';
+    echo '<span style="color: white; font-size: 40px">' . $arv2 . '</span>';
 }
 /** tingimuslaused
  * switch (kontroll) {
@@ -61,29 +61,41 @@ echo '<h5 style="font-size:50px; color: white;">Ulesanne 3</h5>';
 
 ?>
     <style>
-        .round {
+       div {
             width: 100px;
             height: 100px;
-            border: 1px solid white;
+            border: 3px solid white;
+            background: white;
             border-radius: 50px;
         }
     </style>
+    <script>
+        <!--
+        function timedRefresh(timeoutPeriod) {
+            setTimeout("location.reload(true);",timeoutPeriod);
+        }
+
+        window.onload = timedRefresh(500);
+
+        //   -->
+    </script>
 <?php
-$aktiive = 'roheline';
+$aktiivne = 'punane';
 switch ($aktiivne) {
     case 'punane':
-        echo '<div class="round" style="background-color: red;"></div>';
+        echo '<div id="round" style="background-color: red;"></div>';
         echo '<div></div>';
         echo '<div></div>';
         break;
      case 'kollane':
-        echo '<div class="round" style="background-color: yellow;"></div>';
         echo '<div></div>';
+        echo '<div id="round" style="background-color: yellow;"></div>';
         echo '<div></div>';
         break;
     case 'roheline':
-        echo '<div class="round" style="background-color: green;"></div>';
         echo '<div></div>';
         echo '<div></div>';
+        echo '<div id="round" style="background-color: green;"></div>';
         break;
+
 }
