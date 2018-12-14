@@ -12,12 +12,12 @@
 */
 ?>
 <style>
-    <style>
      table, tr, th, td {
+        width: 100px;
         border: 1px solid black;
         border-collapse: collapse;
     }
-    </style>
+</style>
     <script>
         <!--
         function timedRefresh(timeoutPeriod) {
@@ -28,7 +28,6 @@
 
         //   -->
     </script>
-</style>
 <?php
 echo '<h1>Ulesanne</h1>';
 
@@ -44,9 +43,17 @@ for($arv = 1; $arv <= 10; $arv++) {
 
 echo '<hr>';
 echo '<table>';
-    for ($reaNumber = 1; reaNumber <= 5; $reaNumber++) {
+    for ($reaNumber = 1; $reaNumber <= 5; $reaNumber++) {
         echo '<tr>';
-            echo '<td>&nbsp;</td>';
+        $varv = '#';
+        for($kord = 1; $kord <= 6; $kord++) {
+            $varv = $varv.dechex(rand(0,15));
+        }
+            echo '<td style="background '. $varv.'">&nbsp;</td>';
+            echo '<td style="background '. $varv.'">&nbsp;</td>';
+            echo '<td style="background '. $varv.'">&nbsp;</td>';
+            echo '<td style="background '. $varv.'">&nbsp;</td>';
+            echo '<td style="background '. $varv.'">&nbsp;</td>';
         echo '</tr>';
     }
 echo '</table>';
